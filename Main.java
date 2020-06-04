@@ -11,6 +11,19 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		// get some numbers from user until -1, sort number and print mid
+		runPrintMiddleOfNumbersExercise(sc);
+		
+		// get line from user ... print reverse ... use stack
+		runPrintReverseLineExercise(sc);
+		
+		// get line from user ... ',' print middle
+		runMiddleSentencesOfLineExercise(sc);
+		
+		// get some words ... print first and last
+		runPrintFirstAndLastWordOfLineExercise(sc);
+	}
+
+	private static void runPrintMiddleOfNumbersExercise(Scanner sc) {
 		System.out.println("Enter numbers until -1:");
 		ArrayList<Integer> numbers = new ArrayList<>();
 		int number;
@@ -27,20 +40,6 @@ public class Main {
 		}
 		Integer middleNumber = middleOfNumbers(numbers);
 		System.out.println("The middle number is: " + middleNumber);
-		
-		// get line from user ... print reverse ... use stack
-		System.out.println("Enter one line:");
-		String line = sc.nextLine();
-		System.out.println("Reverse line is: " + reverseLine(line));
-		
-		// get line from user ... ',' print middle
-		System.out.println("Enter one line separated by camma:");
-		line = sc.nextLine();
-		System.out.println(middleOfSentences(line));
-		
-		// get some words ... print first and last
-		line = sc.nextLine();
-		System.out.println(firstAndLastOfSentences(line));
 	}
 
 	public static int middleOfNumbers(ArrayList<Integer> numbers) {
@@ -66,6 +65,12 @@ public class Main {
 		return numbers;
 	}
 
+	private static void runPrintReverseLineExercise(Scanner sc) {
+		System.out.println("Enter one line:");
+		String line = sc.nextLine();
+		System.out.println("Reverse line is: " + reverseLine(line));
+	}
+
 	public static String reverseLine(String line) {
 		String[] splittedLine = line.split("\\s+");
 		Stack<String> stackLine = new Stack<>();
@@ -79,6 +84,12 @@ public class Main {
 		return reverseLine.toString();
 	}
 	
+	private static void runMiddleSentencesOfLineExercise(Scanner sc) {
+		System.out.println("Enter one line separated by camma:");
+		String line = sc.nextLine();
+		System.out.println(middleOfSentences(line));
+	}
+
 	public static String middleOfSentences(String line) {
 		String[] splittedLine = line.split(",");
 		int length = splittedLine.length;
@@ -86,6 +97,12 @@ public class Main {
 		return middleSentences != null ? middleSentences.trim() : "";
 	}
 	
+	private static void runPrintFirstAndLastWordOfLineExercise(Scanner sc) {
+		System.out.println("Enter some words:");
+		String line = sc.nextLine();
+		System.out.println("First and last word is: " + firstAndLastOfSentences(line));
+	}
+
 	public static String firstAndLastOfSentences(String line) {
 		String[] splittedLine = line.split("\\s+");
 		int length = splittedLine.length;
